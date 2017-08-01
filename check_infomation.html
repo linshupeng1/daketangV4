@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>保单确认</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg theme-red">
+			<div class="form-block">
+				<div class="form-block-head head-tp2">保单基本信息</div>
+				<div class="form-check-cell"><span>保险名称：</span><span>阳光人寿大克糖糖尿病特定疾病保险</span></div>
+				<div class="form-check-cell"><span>生效日期：</span><span id="startDt">2016-12-07 14:17:32</span></div>
+				<div class="form-check-cell"><span>保险金额：</span><span id="price">5万</span></div>
+				<div class="form-check-cell"><span>保险期间：</span><span id="deadline">5年</span></div>
+				<div class="form-check-cell"><span>交费期间：</span><span id="timeLimt">5年</span></div>
+				<div class="form-check-cell"><span>交费方式：</span><span>年交</span></div>
+			</div>
+			<div class="form-block">
+				<div class="form-block-head">投保人信息</div>
+				<div class="form-check-cell"><span>投保人姓名：</span><span id="tbrxm">呵呵哒</span></div>
+				<div class="form-check-cell"><span>身份证号：</span><span id="tbrsfz">110101198612051292</span></div>
+				<div class="form-check-cell"><span>手机号码：</span><span id="tbrsjhm">15959181219</span></div>
+				<div class="form-check-cell"><span>电子邮箱：</span><span id="tbrEmail">2222@qq.com</span></div>
+				<div class="form-check-cell"><span>通讯地址：</span><span id="tbrAddress">山西省阳泉市盂县街道</span></div>
+			</div>
+			<div class="form-block">
+				<div class="form-block-head">被保人信息</div>
+				<div class="form-check-cell"><span>与投保人关系：</span><span id="relation">本人</span></div>
+				<div class="form-check-cell"><span>姓名：</span><span id="bbrxm">钟汉一</span></div>
+				<div class="form-check-cell"><span>身份证号：</span><span id="bbrsfz">110101198612051292</span></div>
+				<div class="form-check-cell"><span>手机号码：</span><span id="bbrsjhm">15959181219</span></div>
+			</div>
+
+			<div class="form-block">
+				<div class="form-block-head">受益人信息</div>
+				<div class="form-check-cell"><span>受益类型：</span><span>法定</span></div>
+			</div>
+			<div class="form-block">
+				<div class="form-block-head head-tp2">健康管理客户服务信息</div>
+				<div class="form-check-cell"><span>被服务人姓名：</span><span id="bbrxm2">钟汉一</span></div>
+				<div class="form-check-cell"><span>身份证号：</span><span id="bbrsfz2">110101198612051292</span></div>
+				<div class="form-check-cell"><span>手机号码：</span><span id="bbrsjhm2">15959181219</span></div>
+				<div class="form-check-cell"><span>所在地区服务：</span><span>15959181219</span></div>
+			</div>
+			<div class="form-block">
+				<div class="form-block-head head-tp2">收费信息</div>
+				<div class="form-block-head">续期交费信息</div>
+				<div class="form-check-cell"><span>交费银行：</span><span id="bank">中国建设银行</span></div>
+				<div class="form-check-cell"><span>银行账号：</span><span id="bankNo">111111111111111111111</span></div>
+				<div class="form-block-head b-line">收费明细</div>
+				<div class="form-check-cell justify"><span>保险保费：</span><span class="ex-color" id="baofei">¥ 215.5元/年</span></div>
+				<div class="form-check-cell justify"><span>健康管理服务费：</span><span class="ex-color">¥ 1100.00元/年</span></div>
+				<div class="form-check-cell2 b-line"><strong>重要提示:</strong>糖尿病健康管理服务由福州康为网络技术有限公司提供，阳光人寿大克糖糖尿病特定疾病保险有阳光人寿保险股份有限公司提供</div>
+			</div>
+			<div style="display:none" id="payDiv" class="pay-bar"><span class="ex-color" id="totalMoney"><i>￥</i></span><a onclick="turnNext();" class="btn" href="javascript:;">立即支付</a></div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出页</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/mobiscroll.2.13.2.css">
+	</head>
+	<body>
+		<div class="container container-bg unfixform container-pb">
+			<div class="dkt-banner"></div>
+			<div class="dkt-buy-conatiner">
+				<h5>大克糖糖尿病健康保障计划</h5><span>¥<em>1244.50</em>/年起</span>
+			</div><a class="dkt-tobuy js-askform" href="javascript:;">填写 保障人信息</a>
+			<div class="dkt-details">
+				<div class="dkt-blocktitle">产品特点</div><img src="images/img_proList01.jpg"><img src="images/img_proList02.jpg"><img src="images/img_proList03.jpg"><img src="images/img_proList04.jpg"><img src="images/img_proList05.jpg"><img src="images/img_proList06.jpg"><img src="images/img_proList07.jpg"><img src="images/img_proList08.jpg">
+			</div>
+			<div class="dkt-links">
+				<div class="dkt-blocktitle">更多说明</div>
+				<p>大克糖糖尿病健康保障计划，由<span>主动式糖尿病健康干预管理服务和糖尿病并发症保险</span>组成</p><a class="link-tobuy" href="notestobuy.html"><img src="images/icon_state01.png">购买须知</a><a class="link-agreement" href="contract.html"><img src="images/icon_state02.png">保险条款</a><a class="link-toclaim" href="notestoclaim.html"><img src="images/icon_state03.png">理赔说明</a><a class="link-common" href="common_question.html"><img src="images/icon_state04.png">保险问题</a><a class="link-health" href="health_book.html"><img src="images/icon_state05.png">健康管理服务手册</a><a class="link-server" href="server_question.html"><img src="images/icon_state06.png">健康服务常见问题</a>
+			</div><a class="btn btn-full fixed-bottom js-askform" href="javascript:;">点击加入大克糖把父母托付给我</a>
+			<div class="fixform-cover"></div>
+			<div class="fixform">
+				<div class="fixform-cancle"></div>
+				<div class="fixform-header"><img src="images/server-avd.jpg" alt="">
+					<div class="title"><em>￥180.00</em><span>/年</span></div>
+				</div>
+				<div class="fixform-body">
+					<div class="fixform-cell">
+						<label>大克糖服务使用人姓名</label>
+						<input type="text" placeholder="即被保人姓名">
+					</div>
+					<div class="fixform-cell date">
+						<label>出生日期</label>
+						<input id="birthday" type="text" placeholder="请选择出生日期" readonly>
+					</div>
+					<div class="fixform-cell">
+						<label>性别</label>
+						<div class="radio-box">
+							<label><span>男</span>
+								<input type="radio" name="sex">
+							</label>
+							<label><span>女</span>
+								<input type="radio" name="sex">
+							</label>
+						</div>
+					</div>
+					<div class="fixform-cell">
+						<label>手机号码</label>
+						<input type="tel" placeholder="用于绑定糖尿病健康管理服务，请认真填写">
+					</div>
+					<div class="fixform-cell">
+						<label>选择服务区域<span class="gray-color">(非北上广地区可以按需选择适合的服务区域）</span></label>
+						<div class="select-box">
+							<input id="server_area" type="text" value="北京地区" readonly>
+						</div>
+						<p class="tip"><span>目前该地区的服务医院为：</span><span class="gray-color">中国人民解放军总医院（301医院）</span></p>
+					</div>
+					<hr>
+				</div>
+				<div class="fixform-footer"><a class="btn btn-full" href="javascript:;">下一步</a></div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mobiscroll.2.13.2.o.js"></script>
+		<script>$(document).ready(function () {
+    $('#birthday').mobiscroll({
+        preset: 'date',
+        display: 'bottom',
+        mode: 'scroller',
+        dateFormat: 'yyyy-mm-dd',
+        dateOrder: 'yymmdd',
+        showLabel: true,
+        lang: 'zh',
+        setText: '确定',
+        cancelText: '取消',
+        endYear:(new Date()).getFullYear(),
+        startYear:1900,
+        maxDate:new Date()
+    });
+    $('#server_area').mobiscroll({
+        display: 'bottom',
+        mode: 'scroller',
+        group: true,
+        lang: 'zh',
+        setText: '确定',
+        cancelText: '取消',
+        showInput: false,
+        showLabel: false,
+        wheels: [
+            [
+                {
+					label: '服务地区',
+					keys: ['北京地区','上海地区','广东地区'],
+					values: ['北京地区','上海地区','广东地区'],
+				}
+            ]
+        ],
+        headerText: "请选择服务地区" ,
+        formatResult: function (data) {
+            return data;
+        },
+        onSelect: function(data){
+            console.log('在这个地方处理回执动作');
+            //在这个地方处理回执动作
+        }
+    });
+    $('.radio-box label').each(function(){
+        if($(this).children('[type="radio"]').attr('checked')){
+            $(this).addClass('checked');
+        }
+    });
+    $('.radio-box').on('click','label',function(){
+        $(this).addClass('checked').siblings('label').removeClass('checked');
+    });
+
+
+
+    $('.js-askform').on('click',function(){
+        $('.container').removeClass('unfixform');
+    });
+    $('.fixform-cancle').on('click',function(){
+        $('.container').addClass('unfixform');
+    });
+});
+</script>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

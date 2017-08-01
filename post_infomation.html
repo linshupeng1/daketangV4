@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>保单填写</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/mobiscroll.2.13.2.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg theme-red">
+			<div class="form-before-tip">* 以下全部为必填项，为保证您顺利投保，请您认真填写</div>
+			<div class="form-block">
+				<div class="form-block-head">投保人信息</div>
+				<div class="form-cell">
+					<label>投保人姓名</label>
+					<input type="text" placeholder="请输入投保人真实姓名">
+				</div>
+				<div class="form-cell">
+					<label>身份证号</label>
+					<input type="text" placeholder="请填写18位身份证号">
+				</div>
+				<div class="form-cell">
+					<label>手机号码</label>
+					<input type="tel" placeholder="请填写银行预留手机号用于支付">
+				</div>
+				<div class="form-cell">
+					<label>电子邮箱</label>
+					<input type="text" placeholder="用作发送电子保单，请认真填写">
+				</div>
+				<div class="form-cell select">
+					<label>通讯地址</label>
+					<input id="address-select" type="text" placeholder="请选择省、市、区县" readonly>
+				</div>
+				<div class="form-cell unlabel">
+					<input type="text" placeholder="请具体到街道楼名">
+				</div>
+			</div>
+			<div class="form-block">
+				<div class="form-block-head">被保人信息<span class="tip">(健康管理服务客户同被保人)</span></div>
+				<div class="form-cell select">
+					<label>与投保人关系</label>
+					<input id="relationship" type="text" placeholder="请选择" readonly>
+				</div>
+				<div class="form-cell">
+					<label>被保人姓名</label>
+					<input type="text" placeholder="请输入被保人真实姓名">
+				</div>
+				<div class="form-cell">
+					<label>身份证号</label>
+					<input type="text" placeholder="请填写18位身份证号">
+				</div>
+				<div class="form-cell">
+					<label>手机号码</label>
+					<input type="tel" placeholder="请填写正确的手机号码">
+				</div>
+			</div>
+			<div class="form-block">
+				<div class="form-block-head">续期交费信息</div>
+				<div class="form-cell select">
+					<label>交费银行</label>
+					<input id="bank" type="text" placeholder="请选择" readonly>
+				</div>
+				<div class="form-cell">
+					<label>银行账号</label>
+					<input type="text" placeholder="续期交费需要填写借记卡">
+					<p class="tip">开户行城市须与通讯地址城市相同</p>
+				</div>
+				<div class="agreement"><span>本人同意</span><a href="article_autopay.html">《自动转账授权声明》</a><span>的各项内容</span></div>
+			</div>
+            <div class="form-block">
+                <div class="form-block-head">选择服务区域
+                <!-- <span class="gray-color">(非北上广地区可以按需选择适合的服务区域）</span> -->
+                </div>
+                <div class="form-cell select">
+                    <label>服务区域</label>
+                    <input id="server_area" type="text" placeholder="请选择"  readonly>
+                </div>
+            </div>
+			<div class="form-block">
+				<div class="form-block-head">受益人信息</div>
+				<div class="form-cell">
+					<label>受益类型</label>
+					<input type="text" value="法定" readonly>
+				</div>
+			</div>
+			<div class="agreement clearfix"><div class="agreement-info">我已阅读并同意<a href="article_notes.html">《投保须知》</a><a href="article_agreement.html">《投保人声明》</a><br><a href="article_tipbook.html">《人身保险投保提示书》</a>的各项内容</div></div>
+			<div class="btn-group"><a class="btn" href="javascript:;">下一步</a></div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mobiscroll.2.13.2.o.js"></script>
+		<script src="js/area.js"></script>
+		<script src="js/address.js"></script>
+		<script src="js/bankselect.js"></script>
+		<script>$(document).ready(function(){
+    $('#address-select').addressZH();
+    $('#bank').bankselect();
+    $('#server_area').mobiscroll({
+        display: 'bottom',
+        mode: 'scroller',
+        group: true,
+        lang: 'zh',
+        setText: '确定',
+        cancelText: '取消',
+        showInput: false,
+        showLabel: false,
+        wheels: [
+            [
+                {
+                    label: '服务地区',
+                    keys: ['北京地区','上海地区','广东地区'],
+                    values: ['北京地区','上海地区','广东地区'],
+                }
+            ]
+        ],
+        headerText: "请选择服务地区" ,
+        formatResult: function (data) {
+            return data;
+        },
+        onSelect: function(data){
+            console.log('在这个地方处理回执动作');
+            //在这个地方处理回执动作
+        }
+    });
+    $('#relationship').mobiscroll({
+        display: 'bottom',
+        mode: 'scroller',
+        group: true,
+        lang: 'zh',
+        setText: '确定',
+        cancelText: '取消',
+        showInput: false,
+        showLabel: false,
+        wheels: [
+            [
+                {
+					label: '与投保人关系',
+					keys: [
+                        '本人',
+                        '配偶',
+                        '父母',
+                        '子女'
+                    ],
+					values: [
+                        '本人',
+                        '配偶',
+                        '父母',
+                        '子女'
+                    ],
+				}
+            ]
+        ],
+        headerText: "与投保人关系" ,
+        formatResult: function (data) {
+            return data;
+        },
+        onSelect: function(data){
+            console.log('在这个地方处理回执动作');
+            //在这个地方处理回执动作
+        }
+    });
+    // $('#bank').mobiscroll({
+    //     mode: 'scroller',
+    //     group: true,
+    //     lang: 'zh',
+    //     setText: '确定',
+    //     cancelText: '取消',
+    //     showInput: false,
+    //     showLabel: false,
+    //     wheels: [
+    //         [
+    //             {
+	// 				label: '交费银行',
+	// 				keys: [
+    //                     '中国农业银行',
+    //                     '汉口银行',
+    //                     '齐商银行',
+    //                     '泰安商业银行',
+    //                     '枣庄银行',
+    //                     '中国银行',
+    //                     '上海银行',
+    //                     '中国建设银行',
+    //                     '中国光大银行',
+    //                     '广发银行',
+    //                     '兴业银行',
+    //                     '中信银行',
+    //                     '招商银行',
+    //                     '中国民生银行',
+    //                     '交通银行',
+    //                     '华夏银行',
+    //                     '中国工商银行',
+    //                     '平安银行',
+    //                     '中国邮政储蓄银行',
+    //                     '浦发银行',
+    //                 ],
+	// 				values: [
+    //                     '<span class="bank-logo-abc"></span>',
+    //                     '<span class="bank-logo-b1552"></span>',
+    //                     '<span class="bank-logo-b1608"></span>',
+    //                     '<span class="bank-logo-b1629"></span>',
+    //                     '<span class="bank-logo-b1669"></span>',
+    //                     '<span class="bank-logo-boc"></span>',
+    //                     '<span class="bank-logo-bos"></span>',
+    //                     '<span class="bank-logo-ccb"></span>',
+    //                     '<span class="bank-logo-ceb_old"></span>',
+    //                     '<span class="bank-logo-cgb"></span>',
+    //                     '<span class="bank-logo-cib"></span>',
+    //                     '<span class="bank-logo-citic"></span>',
+    //                     '<span class="bank-logo-cmb"></span>',
+    //                     '<span class="bank-logo-cmbc"></span>',
+    //                     '<span class="bank-logo-comm"></span>',
+    //                     '<span class="bank-logo-hxb"></span>',
+    //                     '<span class="bank-logo-icbc"></span>',
+    //                     '<span class="bank-logo-pingan"></span>',
+    //                     '<span class="bank-logo-psbc"></span>',
+    //                     '<span class="bank-logo-spdb"></span>'
+    //                 ],
+	// 			}
+    //         ]
+    //     ],
+    //     headerText: "请选择交费银行" ,
+    //     formatResult: function (data) {
+    //         return data;
+    //     },
+    //     onSelect: function(data){
+    //         console.log('在这个地方处理回执动作');
+    //         //在这个地方处理回执动作
+    //     }
+    // });
+
+
+
+    $('.agreement').on('click',function(){
+        $(this).toggleClass('unchecked');
+    });
+
+
+    /**修改 12-26 wj**/
+
+    //身高体重
+    function infoCallBack(array) {
+        return array[0];
+    }
+
+    var infoHeightIndex = 70,
+        infoWeightIndex = 20;
+    var infoHeightWheels = [
+        [{
+            label: '身高（cm）',
+            keys: [],
+            values: [],
+        }]
+    ];
+    while (infoHeightIndex <= 230) {
+        infoHeightWheels[0][0].values.push(infoHeightIndex.toFixed(0));
+        infoHeightWheels[0][0].keys.push(infoHeightIndex.toFixed(0));
+        infoHeightIndex += 1;
+    }
+
+    var infoWeightWheels = [
+        [
+
+            {
+                label: '体重（kg）',
+                keys: [],
+                values: [],
+            }
+        ]
+    ];
+    while (infoWeightIndex <= 200) {
+        infoWeightWheels[0][0].values.push(infoWeightIndex.toFixed(0));
+        infoWeightWheels[0][0].keys.push(infoWeightIndex.toFixed(0));
+        infoWeightIndex += 1;
+    }
+
+    var Heightopt = {
+        display: 'bottom',
+        mode: 'scroller',
+        group: true,
+        lang: 'zh',
+        setText: '确定',
+        cancelText: '取消',
+        showInput: false,
+        showLabel: true,
+        wheels: infoHeightWheels,
+        headerText: function () { return '选择身高'; } ,
+        formatResult: function (array) { //返回自定义格式结果
+            return infoCallBack(array);
+        },
+        onSelect: function(array){
+            return infoCallBack(array);
+        }
+    };
+
+    var Weightopt = {
+        display: 'bottom',
+        mode: 'scroller',
+        group: true,
+        lang: 'zh',
+        setText: '确定',
+        cancelText: '取消',
+        showInput: false,
+        showLabel: true,
+        wheels: infoWeightWheels,
+        headerText: function () { return  '选择体重'; } ,
+        formatResult: function (array) { //返回自定义格式结果
+            return infoCallBack(array);
+        },
+        onSelect: function(array){
+            return infoCallBack(array);
+        }
+    };
+    $('#infoHeight').mobiscroll(Heightopt).mobiscroll('setValue', ['170']);
+    $('#infoWeight').mobiscroll(Weightopt).mobiscroll('setValue', ['60']);
+
+    //点击下一步
+    $('#inofEndBnt').click(function(){
+        location.href ='sorry.html';
+    });
+});
+</script>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

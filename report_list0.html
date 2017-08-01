@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>管理处方</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg">
+			<div class="reports-list">
+				<div class="reports-list-block">
+					<div class="reports-list-header">2016年</div><a class="reports-list-item" href="">6月份管理处方<i class="warning">未完成</i></a><a class="reports-list-item" href="">5月份管理处方<i class="yed">已完成</i></a><a class="reports-list-item" href="">3月份管理处方<i class="info">未评估</i></a><a class="reports-list-item" href="">2月份管理处方</a>
+				</div>
+				<div class="reports-list-block">
+					<div class="reports-list-header">2015年</div><a class="reports-list-item" href="">6月份管理处方</a><a class="reports-list-item" href="">5月份管理处方</a><a class="reports-list-item" href="">3月份管理处方</a><a class="reports-list-item" href="">2月份管理处方</a>
+				</div>
+			</div>
+			<div class="reports-empty">
+				<div class="alerts"><img src="images/empty-ca.png">
+					<p class="alerts-tip">医院正在处理管理处方，请稍候</p>
+				</div>
+			</div>
+		</div>
+		<div class="loading-cloak" ng-if="isLoading">
+			<div class="loading-cover"></div>
+			<div class="loading"><i></i><i></i><i></i><i></i><i></i></div>
+		</div>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>健康告知</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/mobiscroll.2.13.2.css">
+	</head>
+	<body>
+		<div class="container container-bg theme-red unfixform">
+			<div class="inform-title">
+				<i class="inform-title-icon"></i>
+				<div class="inform-title-info">请仔细阅读以下问询，如以下任一项情况被保险人均不符合，则可投保本保险：</div>
+			</div>
+			<ul class="inform">
+				<li><i class="inform-index">(1)</i><span>您确诊2型糖尿病的时间距今是否已经超过10年？</span></li>
+				<li><i class="inform-index">(2)</i><span>您最近一年是否空腹血糖检查结果超过8.8mmol/L（160mg/dL）、或者糖化血红蛋白检查结果超过8%？</span></li>
+				<li><i class="inform-index">(3)</i><span>您是否曾患有或被告知患有以下一种或几种疾病：1型糖尿病、视网膜病变、失明、糖尿病酮症酸中毒、高渗性昏迷、慢性肾脏疾病、尿蛋白阳性、肾功能衰竭、糖尿病足、糖尿病外周神经病变。</span></li>
+				<li><i class="inform-index">(4)</i><span>您是否曾患有或被告知患有以下一种或几种疾病：任何残疾、肢体缺损、精神心理疾患、癌症、恶性肿瘤、白血病、脑血管疾病、短暂性脑缺血发作、脑中风、冠心病、心绞痛、心肌梗塞、先天性心脏病、主动脉疾病、高血压（经治疗后平均血压值仍 > 150/95mmHg）、高脂血症、心律失常、肝硬化、肺心病、风湿性心脏病、红斑狼疮、脑肿瘤、白内障、青光眼、视神经病变。</span></li>
+			</ul>
+			<div class="btn-group btn-group-fixed inform-btn-group"><a class="btn btn-info btn-half">部分情况有</a><a class="btn btn-half js-askform">以上情况全无，继续</a></div>
+			<!-- 弹框 -->
+		<div class="fixform-cover"></div>
+			<div class="fixform">
+				<div class="fixform-cancle "></div>
+				<div class="fixform-header"><img src="images/header-pic.png" alt="">
+					<div class="title"><em>￥144.50元/年起</em>
+						<div>大克糖糖尿病健康保障计划</div>
+					</div>
+				</div>
+				<div class="fixform-body">
+					<div class="fixform-cell">
+						<label>被保人性别：</label>
+						<div class="radio-box">
+							<label><span>男</span>
+								<input type="radio" name="sex">
+							</label>
+							<label><span>女</span>
+								<input type="radio" name="sex">
+							</label>
+						</div>
+					</div>
+					<div class="fixform-cell date">
+						<label>被保人出生日期：</label>
+						<input id="birthday" type="text" placeholder="请选择出生日期" readonly>
+					</div>
+				</div>
+				<div class="fixform-footer"><a class="btn btn-red btn-full" href="post_infomation.html">下一步</a></div>
+			</div>
+			<!-- 弹框 -->
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mobiscroll.2.13.2.o.js"></script>
+		<script>$(document).ready(function () {
+    $('#birthday').mobiscroll({
+        preset: 'date',
+        display: 'bottom',
+        mode: 'scroller',
+        dateFormat: 'yyyy-mm-dd',
+        dateOrder: 'yymmdd',
+        showLabel: true,
+        lang: 'zh',
+        setText: '确定',
+        cancelText: '取消',
+        endYear:(new Date()).getFullYear(),
+        startYear:1900,
+        maxDate:new Date()
+    });
+    
+    $('.radio-box label').each(function(){
+        if($(this).children('[type="radio"]').attr('checked')){
+            $(this).addClass('checked');
+        }
+    });
+    $('.radio-box').on('click','label',function(){
+        $(this).addClass('checked').siblings('label').removeClass('checked');
+    });
+
+
+
+    $('.js-askform').on('click',function(){
+        $('.container').removeClass('unfixform');
+    });
+    $('.fixform-cancle').on('click',function(){
+        $('.container').addClass('unfixform');
+    });
+});
+</script>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

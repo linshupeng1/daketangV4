@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>投保须知</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg theme-red">
+			<article>
+				<header>
+					<h5>投保须知</h5>
+				</header>
+				<section>
+					<p class="clr-red">感谢您选择阳光人寿保险股份有限公司为您服务，请您在投保之前仔细阅读以下提示:</p>
+					<p class="clr-black">1、为了使您详知所投保的保险内容并维护您的合法权益，请在投保之前仔细阅读保险条款，并确认已了解保险条款的各项内容(注意保险责任、责任免除、犹豫期、退保等 关键信息)。</p>
+					<p>2、投保资料是投保人向本公司申请投保的重要文件<span class="clr-black">，本公司对投保资料及告知内容承担保密义务。</span></p>
+					<p>3、投保人(被保险人)在投保时应如实告知投保流程中的各项内容，不得故意隐瞒或不实告知，否则本公司有权依据法律规定及本保险合同约定解除保险合同，所有告知事项 均以书面告知为准，口头告知无效。同时<span class="clr-black">您的个人信息(地址、电话等)将作为计算保险 费、核保、寄送保险合同、电话回访等服务的重要依据，请您提供真实、完整的信息，否则将不利于保护您的合法权益。本公司承诺:未经客户同意，不会将客户信息用于本公司 和第三方机构的销售活动。</span></p>
+					<p>4、如果投保人选择分期交纳保险费，请投保人根据自身的财务状况，选择合适的交费期限和交费金额，无法持续交纳保险费可能导致保险合同效力中止或合同解除。本公司将 于续期保费应缴日前向投保人发出交费提示。</p>
+					<p>5、投保人应对被保险人有保险利益;如为未成年人投保以死亡为给付责任的保险，投保人须为未成年人的父母，且身故保险金总和不能超过保险监督管理机构的规定额度。</p>
+				</section>
+			</article>
+		</div>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

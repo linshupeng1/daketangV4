@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>理赔说明</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg theme-red">
+			<div class="notes-block">
+				<div class="notes-head">理赔流程</div>
+				<div class="block stepstoclaim"></div>
+				<ul class="steps">
+					<li>发生保险事故后，请您拨打公司客服电话95510</li>
+					<li>按照条款要求或者根据客服指导，备齐理赔所需全部单证。</li>
+					<li>递交材料到当地客服中心申请理赔。</li>
+					<li>我们在受理您的理赔资料后，会及时进行理赔调查及审核。</li>
+					<li>理赔成功，发送赔付通知书，短信告知理赔金额；理赔失败，发送拒付通知书，退还理赔申请资料。</li>
+				</ul>
+			</div>
+			<div class="notes-block">
+				<div class="notes-head">理赔所需材料证明：</div>
+				<div class="notes-list">
+					<div class="notes-list-head"><span>糖尿病严重并发疾病保险金申请</span></div>
+					<div class="notes-list-body">
+						<p>由保险金受益人作为申请人填写保险金给付申请书，并须提供下列证明和资料：</p>
+						<p><i>①</i><span>保险合同；</span></p>
+						<p><i>②</i><span>受益人有效身份证件；</span></p>
+						<p><i>③</i><span> 我们认可的医院专科医生出具的附有病理显微镜检查、血液检验及其他科学方法检验报告的、诊断结论符合保险条款中“糖尿病严重并发疾病”所列举情形的疾病诊断证明书；</span></p>
+						<p><i>④</i><span>所能提供的与确认保险事故的性质、原因等有关的其他证明和资料。</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

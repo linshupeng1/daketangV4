@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>修改地址</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telphone=no, email=no" />
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 适应移动端end -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/myorder.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fastclick.js"></script>
+</head>
+<body>
+<div class="container ui-cratlist-list" id="container">
+    <div class="ui-input-box">
+    	<div class="ui-input-item clearfix">
+        	<label class="ui-gray">收货人</label>
+            <div class="ui-input-right">
+            	<input type="text" placeholder="请输入收货人名称" />
+            </div>
+        </div>
+        <div class="ui-input-item clearfix">
+        	<label class="ui-gray">手机号码</label>
+            <div class="ui-input-right">
+            	<input type="text" placeholder="请输入手机号码" />
+            </div>
+        </div>
+        <div class="ui-input-item clearfix">
+        	<label class="ui-gray">地区</label>
+            <div class="ui-input-right">
+                <input type="text" id="area" placeholder="选择地区" readonly/>
+            </div>
+        </div>
+        <div class="ui-input-item clearfix">
+        	<label class="ui-gray">详细地址</label>
+            <div class="ui-input-right"><textarea placeholder="请填写详细地址"></textarea></div>
+        </div>
+        <div class="ui-input-item clearfix">
+        	<label class="ui-gray">邮政编码</label>
+            <div class="ui-input-right">
+            	<input type="number" placeholder="请输入邮政编码" />
+            </div>
+        </div>
+        <div class="ui-input-item clearfix">
+            <em class="ui-default-addr-icon"></em>
+            <label class="ui-default-addr ui-gray">设为默认地址</label>
+        </div>
+    </div>
+</div>
+<div class="ui-addr-bottom-btn-box">
+    <div class="ui-addr-btn">
+        <a href="javascript:void(0);" class="ui-save-btn">保存</a>
+    </div>
+    <div class="ui-addr-btn">
+        <a href="javascript:void(0);" class="ui-delete-btn">删除</a>
+    </div>
+</div>
+<a href="mall-index.html" class="ui-home">
+    <i class="ui-home-icon"></i>
+</a>
+<script src="js/area.js"></script>
+<script src="js/address.js"></script>
+<script>
+    $('.ui-default-addr-icon').on('click',function(){
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+        }else{
+            $(this).addClass('active');
+        }
+    })
+
+    $('.ui-select-click').on('click',function(){
+        $(this).siblings('.ui-triangle-icon').toggleClass('ui-toggle-class');
+    })
+
+    $('#area').addressZH();
+</script>
+</body>
+</html>

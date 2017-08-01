@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>自动转帐授权声明</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg theme-red">
+			<article>
+				<header>
+					<h5>自动转帐授权声明</h5>
+				</header>
+				<section>
+					<p>1.本人同意授权江西德宝源保险经纪有限公司通过第三方支付平台从本人提供的账户中转账支付与江西德宝源保险经纪有限公司约定的首年保险费和健康管理服务费。</p>
+					<p>2.本人同意授权阳光人寿保险股份有限公司从本人提供的账户中转账支付大克糖糖尿病健康保障计划续期保险费。</p>
+					<p>3.本人同意授权福州康为网络技术有限公司从本人提供的账户中转账支付大克糖糖尿病健康保障计划续期健康管理服务费。</p>
+					<p>4.本人保证此账号有足够的金额支付应交保险费与健康管理服务费，若因账户存款余额不足造成代扣不成功，致合同不能成立或不能持续有效，因此引起的责任概由本人承担（为避免清户，账户中余额要始终保持>10元）。</p>
+					<p>5.本人同意阳光人寿保险股份有限公司将多收的保险费及因延期承保、撤销投保申请、犹豫期退保、退保等引起的退费通过本人提供的该账户返还给本人。</p>
+					<p>6.本人同意江西德宝源保险经纪有限公司，因所购买的大克糖糖尿病健康保障计划犹豫期退款，将该健康管理服务费通过本人提供的该账户返还给本人。</p>
+					<p>7.本人同意福州康为网络技术有限公司将多收的健康管理服务费及因大克糖糖尿病健康保障计划服务失效、中止引起的退费通过本人提供的该账户返还给本人。</p>
+					<p>8.本人因故结清该账户，应重新开立账户，并及时通知你公司进行变更。</p>
+					<p>9.如因系统原因保费及健康管理服务费划转不成功，造成合同未成立，阳光人寿保险股份有限公司及福州康为网络技术有限公司不承担责任。</p>
+				</section>
+			</article>
+		</div>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

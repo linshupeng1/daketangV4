@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出页</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg  container-pb theme-red">
+			<div class="dkt-banner-v2"></div>
+			<div class="dkt-buy-conatiner">
+				<h5>大克糖糖尿病健康保障计划</h5><span>¥<em>144.50</em>/年起</span>
+			</div>
+			<div class="dkt-details">
+				<div class="dkt-blocktitle">产品特点</div><img src="images/view/img_proList_01.png"><img src="images/view/img_proList_02.png"><img src="images/view/img_proList_03.png"><img src="images/view/img_proList_04.png"><img src="images/view/img_proList_05.png"><img src="images/view/img_proList_06.png"><img src="images/view/img_proList_07.png">
+			</div>
+			<div class="dkt-links links-red">
+				<div class="dkt-blocktitle text-left">更多说明</div>
+				<div class="phone-wrap">
+					<p class="phone-line">保险保障咨询电话：95510</p>
+					<p class="phone-line">健管服务咨询电话：4009-613-713或 0591-968696</p>
+				</div>
+				<a class="link-tobuy" href="notestobuy.html"><img src="images/view/icon_state01.png">购买须知</a><a class="link-agreement" href="contract.html"><img src="images/view/icon_state02.png">保险条款</a><a class="link-toclaim" href="notestoclaim.html"><img src="images/view/icon_state03.png">理赔说明</a><a class="link-common" href="common_question.html"><img src="images/view/icon_state04.png">保险问题</a><a class="link-health" href="health_book.html"><img src="images/view/icon_state05.png">健康管理服务手册</a><a class="link-server" href="server_question.html"><img src="images/view/icon_state06.png">健康管理问题解答</a>
+			</div><a class="btn btn-full btn-red fixed-bottom js-askform" href="health_inform.html">把健康托付给“大克糖”，点击加入</a>
+		</div>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>掌控糖尿病APP使用说明</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/introduction.css">
+	</head>
+	<body>
+		<div class="container introduction-box">
+			<div class="head-title">
+				<p>您购买“大克糖”糖尿病健康保障计划后，将会收到一条来自掌控糖尿病平台、包含您“用户名”和“密码”的短信，请务必牢记，并尽快完成以下操作以保证记录、监测、管理的准确性和时效性。</p>
+			</div>
+			<div class="introduction-cen"><img src="images/introduction/introduction_01.jpg"><img src="images/introduction/introduction_02.jpg"><img src="images/introduction/introduction_03.jpg"><img src="images/introduction/introduction_04.jpg"><img src="images/introduction/introduction_05.jpg"><img src="images/introduction/introduction_06.jpg"><img src="images/introduction/introduction_07.jpg"><img src="images/introduction/introduction_08.jpg"><img src="images/introduction/introduction_09.jpg"><img src="images/introduction/introduction_10.jpg"><img src="images/introduction/introduction_11.jpg"><img src="images/introduction/introduction_12.jpg"><img src="images/introduction/introduction_13.jpg"><img src="images/introduction/introduction_14.jpg"><img src="images/introduction/introduction_15.jpg"></div>
+			<div class="footer">
+				<p>掌控糖尿病服务热线：<span class="Cred">4009-613-713</span></p>
+				<p>阳光保险客服电话：<span class="Cred">95510</span></p>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

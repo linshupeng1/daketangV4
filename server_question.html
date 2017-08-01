@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>常见问题</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="common-question">
+				<div class="common-question-index">1</div>
+				<div class="common-question-header">APP如何下载？</div>
+				<div class="common-question-body">
+					<p>使用iOS7.0、Android4.0.3或以上版本智能手机在APP store、安卓应用市场搜索“掌控糖尿病”，免费下载软件，安装。更多细节请参阅产品手册。</p>
+				</div>
+			</div>
+			<div class="common-question">
+				<div class="common-question-index">2</div>
+				<div class="common-question-header">请问为什么没有收到上一个月的月度控糖报告？</div>
+				<div class="common-question-body">
+					<p>如果您是购买月15日之后购买的大克糖产品，由于血糖数据量少，次月1日不会出具本月的月度控糖报告，将在下次月为您出具。</p>
+				</div>
+			</div>
+			<div class="common-question">
+				<div class="common-question-index">3</div>
+				<div class="common-question-header">请问服务可以新增购买吗？</div>
+				<div class="common-question-body">
+					<p>本服务与大克糖糖尿病特定疾病保险产品绑定，免费赠送的体验版。若您觉得体验版服务不能满足需求，可以登录掌控糖尿病APP或微信公众号，我们在“服务专区”提供多种服务套餐，方便您了解并购买。</p>
+				</div>
+			</div>
+			<div class="more-question">更多的问题，您可以通过微信公众号或掌控糖尿病app，向糖尿病管理中心大克糖工作室的教育者咨询</div>
+		</div>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

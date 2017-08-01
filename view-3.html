@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出页</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/info.css">
+		<link rel="stylesheet" href="css/mobiscroll.2.13.2.css">
+	</head>
+	<body>
+		<div class="container container-bg unfixform container-pb theme-red ui-container-pb">
+			<div class="dkt-banner-v2"></div>
+			<div class="ui-info">
+				<div class="ui-contain-text" style="display: block;">
+					<h3>
+						尊敬的用户 :
+					</h3>
+					<p class="ui-contain-info">
+						您好！您已成功预约了“大克糖”健康保障计划，请您于12月3日-5日之间，登录掌控糖尿病支付宝服务窗完成购买。如您购买成功，
+					</p>
+					<p class="ui-contain-step">1、糖尿病并发症风险基因检测产品1份</p>
+					<p class="ui-contain-step">2、包年试纸</p>
+					<p class="ui-limited-text">限额500份，先到先得</p>
+				</div>
+				<div class="ui-query-toast" style="display: none;">
+					<i class="ui-query-icon"></i>
+					<p>没有查询到您的预约购买信息,<br>您可以点击下方按钮去填写预约购买信息</p>
+				</div>
+				<div class="ui-order-phn" style="display: none;">
+					<p class="ui-order-pay">预约购买手机号码</p>
+					<input class="ui-order-input" type="text" placeholder="请输入预约时填写手机号码">
+				</div>
+			</div>
+			<div class="ui-btn-box">
+				<a class="btn btn-full btn-red fixed-bottom js-askform ui-pay-btn" href="javascript:;">立刻购买</a>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>$(document).ready(function () {
+
+});
+</script>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>投保人声明</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg theme-red">
+			<article>
+				<header>
+					<h5>投保人声明</h5>
+				</header>
+				<section>
+					<p>1、本人已认真阅读
+						投保须知
+						、
+						投保提示书
+						、
+						产品条款
+						（尤其是保险责任条款、责任免除条款、合同解除条款），了解本产品的特点，并同意将电子保单送达之日视为保单的客户签收日。
+					</p>
+					<p>2、本人已经确认网络投保流程填写的各项内容，对受益人的指定均认可。本人在投保流程中的健康告知内容均准确无误，如不属实贵公司有权依据法律规定和条款约定解除本保险合同。</p>
+					<p>3、本人确认本投保流程中提供的银行及账号是投保人本人的开户银行及账号，本人授权该银行从此账户支付与贵公司约定的各期保险费及暂收保险费，并接收贵公司的各种退费。本人已在结算账户中保留开户银行所要求的最低存款余额，公司于同意承保或约定续期保费缴纳日开始转账，若因账户存款余额不足造成的转账不成功，致使保险合同不成立或不能持续有效，因此引起的责任将由本人承担。</p>
+					<p>4、本人已知晓：终止付款授权，变更付款授权账户时，应该于当期保险费到期日的30天前（含30天）向贵公司递交申请，办理变更手续。因未及时办理变更手续而导致的结果，本人承担相应责任。</p>
+					<p>5、本人已知晓：本保险合同自贵公司同意承保、收取保险费并签发保险单后开始生效，生效日载于保险单上，贵公司自生效日零时起开始承担合同约定的保险责任。</p>
+					<p>6、本人同意，本次投保信息及电子记录凭证等数据电文是本保险合同的组成部分，具备完全证据效力。</p>
+					<p>7、本人授权贵公司可以从任何单位、组织和个人就有关保险事宜查询、索取与本人有关的资料和证明，作为审核本投保申请及评估相关理赔申请的依据，贵公司对个人资料承担保密义务。</p>
+					<p>8、本人同意并授权：保险人在履行对投保人、被保险人个人信息严格保密的基础上，有权将其个人信息披露给阳光保险集团股份有限公司及其子公司（包括分支机构），以及贵公司为投保人、被保险人进一步提供相关服务所需的第三方。</p>
+				</section>
+			</article>
+		</div>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>大克糖</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg">
+			<div class="ins-head"><img src="images/avd.png">
+				<div class="ins-head-right">
+					<div class="ins-name">林丁丁</div>
+					<p>保单号：16516351351351316516</p>
+					<p>生效日期：2016-08-08</p>
+				</div>
+			</div>
+			<div class="ins-body">
+				<div class="ins-line">
+					<div class="ins-cell"><img src="images/ins-1.png"><span>管理处方</span></div>
+					<div class="ins-cell"><img src="images/ins-2.png"><span>月度报告</span></div>
+					<div class="ins-cell"><img src="images/ins-3.png"><span>历史血糖</span></div>
+					<div class="ins-cell"><img src="images/ins-4.png"><span>咨询医生</span></div>
+					<div class="ins-cell"><img src="images/ins-5.png"><span>糖化数据上传</span></div>
+					<div class="ins-cell"><img src="images/ins-6.png"><span>朋伴教育</span></div>
+					<div class="ins-cell"><img src="images/ins-7.png"><span>邮寄地址</span></div>
+					<div class="ins-cell"><img src="images/ins-8.png"><span>保单服务</span></div>
+					<div class="ins-cell"><img src="images/ins-9.png"><span>在线回访</span></div>
+				</div>
+			</div>
+			<div class="pop">
+				<div class="pop-cover"></div>
+				<div class="pop-panel">
+					<div class="pop-panel-body">根据中国保监会规定，为保障您的合法权益，请您务必填写问卷！点击下方"在线回访"按钮进入</div>
+					<div class="pop-panel-footer"><a class="btn" href="">暂不前往</a><a class="btn" href="">在线回访</a></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>

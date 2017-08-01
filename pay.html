@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出页</title>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telphone=no, email=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="320">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="css/mobiscroll.2.13.2.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container container-bg theme-red">
+			<div class="form-block">
+				<div class="form-block-head">保单信息</div>
+				<div class="form-check-cell"><span>保险名称：</span><span>大克糖糖尿病保障</span></div>
+				<div class="form-check-cell"><span>应付金额：</span><span class="ex-color">￥1005.00</span></div>
+				<div class="form-check-cell"><span style="text-indent: 5em">含健康管理服务费 ￥1100.00/年</span></div>
+				<div class="form-check-cell"><span style="text-indent: 5em">含保费 ￥324.50/年</span></div>
+			</div>
+			<div class="form-block">
+				<div class="form-block-head">银行卡信息</div>
+				<div class="form-cell select">
+					<label>银行选择</label>
+					<input id="bank" type="text" placeholder="请选择开户银行" readonly>
+				</div>
+				<div class="form-cell">
+					<label>卡号</label>
+					<input type="text" placeholder="银行卡号" readonly>
+				</div>
+				<div class="form-cell">
+					<label>姓名</label>
+					<input type="text" placeholder="持卡人姓名" readonly>
+				</div>
+				<div class="form-cell">
+					<label>身份证号</label>
+					<input type="text" placeholder="持卡人身份证号">
+				</div>
+				<div class="form-cell">
+					<label>手机号</label>
+					<input type="text" placeholder="银行预留手机号">
+				</div>
+				<div class="form-cell unlabel">
+					<input type="text" placeholder="请输入短信验证码"><a class="btn pull-right btn-full" href="javascript:;">获取验证码</a>
+				</div>
+			</div>
+			<div class="btn-group"><a class="btn" href="javascript:;">下一步</a></div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mobiscroll.2.13.2.o.js"></script>
+		<script>
+$(document).ready(function(){
+    $('#bank').bankselect();
+});
+// $('#bank').mobiscroll({
+//     mode: 'scroller',
+//     group: true,
+//     lang: 'zh',
+//     setText: '确定',
+//     cancelText: '取消',
+//     showInput: false,
+//     showLabel: false,
+//     wheels: [
+//         [
+//             {
+//                 label: '交费银行',
+//                 keys: [
+//                     '中国农业银行',
+//                     '汉口银行',
+//                     '齐商银行',
+//                     '泰安商业银行',
+//                     '枣庄银行',
+//                     '中国银行',
+//                     '上海银行',
+//                     '中国建设银行',
+//                     '中国光大银行',
+//                     '广发银行',
+//                     '兴业银行',
+//                     '中信银行',
+//                     '招商银行',
+//                     '中国民生银行',
+//                     '交通银行',
+//                     '华夏银行',
+//                     '中国工商银行',
+//                     '平安银行',
+//                     '中国邮政储蓄银行',
+//                     '浦发银行',
+//                 ],
+//                 values: [
+//                     '<span class="bank-logo-abc">中国农业银行</span>',
+//                     '<span class="bank-logo-b1552">汉口银行</span>',
+//                     '<span class="bank-logo-b1608">齐商银行</span>',
+//                     '<span class="bank-logo-b1629">泰安商业银行</span>',
+//                     '<span class="bank-logo-b1669">枣庄银行</span>',
+//                     '<span class="bank-logo-boc">中国银行</span>',
+//                     '<span class="bank-logo-bos">上海银行</span>',
+//                     '<span class="bank-logo-ccb">中国建设银行</span>',
+//                     '<span class="bank-logo-ceb_old">中国光大银行</span>',
+//                     '<span class="bank-logo-cgb">广发银行</span>',
+//                     '<span class="bank-logo-cib">兴业银行</span>',
+//                     '<span class="bank-logo-citic">中信银行</span>',
+//                     '<span class="bank-logo-cmb">招商银行</span>',
+//                     '<span class="bank-logo-cmbc">中国民生银行</span>',
+//                     '<span class="bank-logo-comm">交通银行</span>',
+//                     '<span class="bank-logo-hxb">华夏银行</span>',
+//                     '<span class="bank-logo-icbc">中国工商银行</span>',
+//                     '<span class="bank-logo-pingan">平安银行</span>',
+//                     '<span class="bank-logo-psbc">中国邮政储蓄银行</span>',
+//                     '<span class="bank-logo-spdb">浦发银行</span>'
+//                 ],
+//             }
+//         ]
+//     ],
+//     headerText: "请选择银行" ,
+//     formatResult: function (data) {
+//         return data;
+//     },
+//     onSelect: function(data){
+//         console.log('在这个地方处理回执动作');
+//         //在这个地方处理回执动作
+//     }
+// });
+</script>
+	</body>
+</html>
+<script>
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        containerEl = doc.getElementsByTagName('body')[0],
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function () {
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;
+	            docEl.style.fontSize = 40 * (clientWidth / 640) + 'px';
+	            containerEl.style.fontSize = (clientWidth > 375? 20 : 16)+ 'px';
+	        };
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	    containerEl.style = 'display:block';
+	})(document, window);
+</script>
